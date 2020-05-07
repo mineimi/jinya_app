@@ -1,0 +1,31 @@
+<% provide(:title, "About") %>
+<p>外観写真</p>
+<p>〒131-0033 東京都墨田区向島２丁目１９−１５</p>
+<p>とうきょうスカイツリー駅より徒歩7分</p>
+
+<P>地図</P>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNaLXC60wdhSQhImQVOdgEBQCReEoMGms&callback=getLatLng"
+async defer></script>
+
+<div id='map'></div>
+
+<style>
+#map{
+  height: 400px;
+}
+</style>
+
+<script>
+function initMap(){
+  var marker;
+  let map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: 35.714031, lng: 139.807200},
+  zoom: 18
+  });
+  marker = new google.maps.Marker({
+    position:  {lat: 35.714031, lng: 139.807200},
+    map: map
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2Cu_rW470BgNz6AKT6cEJNpN49NORQO0&callback=initMap" async defer></script>
